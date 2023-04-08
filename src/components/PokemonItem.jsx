@@ -8,9 +8,14 @@ const Container = styled.div`
     border-radius: 0.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
+    justify-content: space-between;
 
     > div {
         width: 30%;
+    }
+
+    img {
+        width: 40%;
     }
 `;
 
@@ -91,8 +96,6 @@ export default function PokemonItem({ name, url }) {
             .catch((err) => console.log(err));
     }, []);
 
-    data && console.log(data);
-
     return (
         <Container
             style={{
@@ -117,6 +120,7 @@ export default function PokemonItem({ name, url }) {
                         ))}
                 </Types>
             </div>
+            <img src={data.sprites && data.sprites.front_default} />
         </Container>
     );
 }

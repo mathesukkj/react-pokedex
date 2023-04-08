@@ -1,6 +1,6 @@
 # React - Pokedex
 
-This is a simple pokedex app built with React and styled-components. This project was completed as part of the DIO Javascript bootcamp.
+This is a simple pokedex app built with React and styled-components. This project was completed as part of the DIO Javascript/Angular(yes, angular) bootcamp.
 
 
 ## Project Objective

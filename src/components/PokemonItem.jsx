@@ -96,31 +96,32 @@ export default function PokemonItem({ name, url }) {
             .catch((err) => console.log(err));
     }, []);
 
+    if (data.length === 0) {
+        return null;
+    }
+
     return (
         <Container
             style={{
-                backgroundColor:
-                    data.types && colorPokeMap[data.types[0].type.name],
+                backgroundColor: colorPokeMap[data.types[0].type.name],
             }}
         >
             <div>
                 <Title>{name}</Title>
                 <Types>
-                    {data.types &&
-                        data.types.map((item) => (
-                            <li
-                                style={{
-                                    backgroundColor:
-                                        colorTypeMap[item.type.name],
-                                }}
-                                key={item.type.name}
-                            >
-                                {item.type.name}
-                            </li>
-                        ))}
+                    {data.types.map((item) => (
+                        <li
+                            style={{
+                                backgroundColor: colorTypeMap[item.type.name],
+                            }}
+                            key={item.type.name}
+                        >
+                            {item.type.name}
+                        </li>
+                    ))}
                 </Types>
             </div>
-            <img src={data.sprites && data.sprites.front_default} />
+            <img src={data.sprites.front_default} />
         </Container>
     );
 }
